@@ -1,0 +1,29 @@
+<h1>{{name}}</h1>
+<h3>{{name | lowercase}}</h3>
+<h3>{{name | uppercase}}</h3>
+<h3>{{message | titlecase}}</h3>
+<h3>{{name | slice:3}}</h3>
+<!-- not including 4th index -->
+<h3>{{name | slice:2:4}}</h3>
+<!-- json pipe -->
+<h3>{{person | json}}</h3>
+<!-- number pipe -->
+<h3>{{5.678 | number:'1.2-3'}}</h3>
+<h3>{{5.678 | number:'3.4-5'}}</h3>
+<h3>{{5.678 | number:'3.1-2'}}</h3>
+<!-- percentage pipe -->
+<h2>{{0.25 |percent}}</h2>
+<!-- currency pipe -->
+<!-- by deafault its us currency -->
+<h3>{{0.25 |currency}}</h3>
+<!-- to change default currency to great britian pound -->
+<h3>{{0.25 |currency:'GBP'}}</h3>
+<!-- without symbol of currency but with code -->
+<h3>{{0.25 |currency:'EUR':'code'}}</h3>
+<!-- date pipe -->
+<h3>{{date}}</h3>
+<h3>{{date | date:'short'}}</h3>
+<h3>{{date | date:'shortDate'}}</h3>
+<h3>{{date | date:'shortTime'}}</h3>
+<h3>{{date | date:'longDate'}}</h3>
+<h3>{{date | date:'longTime'}}</h3>

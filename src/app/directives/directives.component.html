@@ -1,0 +1,66 @@
+<h1>STRUCTURAL DIRECTIVES</h1>
+<!-- add or remove html elemennts -->
+<!-- ngif,ngswitch,ngfor -->
+
+<h2 *ngIf="true">
+  welcome to structural directives
+</h2>
+<!-- setting property value in if -->
+<h2 *ngIf="displayName; else elseBlock">
+  welcome to structural directives(property value)
+</h2>
+<!-- angular specific html tag for else part -->
+<ng-template #elseBlock>
+<h2>hidden(else block executed)</h2>
+</ng-template>
+<!-- another example -->
+<div *ngIf="displayName;then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <h2>if then block</h2>
+</ng-template>
+<ng-template #elseBlock>
+  <h2>else block</h2>
+</ng-template>
+
+<h1>SWITCH DIRECTIVES</h1>
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">you picked red color</div>
+  <div *ngSwitchCase="'yellow'">you picked yellow color</div>
+  <div *ngSwitchCase="'green'">you picked green color</div>
+  <div *ngSwitchDefault>pick again</div>
+</div>
+
+<h1>FOR DIRECTIVES</h1>
+<div *ngFor="let color of colors">
+  <h3>{{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+<!-- to access index during iteration -->
+<div *ngFor="let color of colors; index  as i">
+  <h3>{{i}}{{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+<!-- keywords used in ngfor -->
+<div *ngFor="let color of colors; first  as f">
+  <h3>{{f}} {{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+<div *ngFor="let color of colors; last as l">
+  <h3>{{l}} {{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+<div *ngFor="let color of colors; odd as o">
+  <h3>{{o}} {{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+<div *ngFor="let color of colors; even as e">
+  <h3>{{e}} {{color}}</h3>
+</div>
+<h2>-------------------------------</h2>
+
+<h1>COMPONENT INTERACTION</h1>
+<h3>component interaction between parent component and child component</h3>
+<!-- parent component to child component data passed through @input -->
+<!-- child component to parent component data passed through @output -->
+<h2> {{"hello  " +  parentData}}</h2>
+<button (click)="fireEvent()">send Event</button>

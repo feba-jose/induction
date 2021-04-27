@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+{{message}}
+<app-test></app-test>
+<app-directives (childEvent)="message=$event" [parentData]="name"></app-directives>
+<app-pipes></app-pipes>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,56 @@
+<h2>{{name}}</h2>
+<H3>{{5+5}}</H3>
+<h4>{{"welcome"+name}}</h4>
+<h4>{{name.length}}</h4>
+<h4>{{name.toUpperCase()}}</h4>
+<h4>{{name.toLowerCase()}}</h4>
+<h4>{{greetUser()}}</h4>
+
+<h1>PROERTY BINDING</h1>
+<input [id]="myId" type="text" value="vuelogix">
+<!-- property binding with interpolation -->
+<input id="{{myId}}"  type="text" value="vuelogix">
+<!-- disabled attributes -->
+<input disabled id="{{myId}}"  type="text" value="vuelogix">
+<input disabled=false id="{{myId}}"  type="text" value="vuelogix">
+<!-- enabled attribute -->
+<input [disabled]="false" id="{{myId}}"  type="text" value="vuelogix">
+<!-- class property -->
+<input [disabled]="isDisabled" id="{{myId}}"  type="text" value="vuelogix">
+<!-- another synatx for property binding -->
+<input bind-disabled="isDisabled" id="{{myId}}"  type="text" value="vuelogix">
+<h1>CLASS BINDING</h1>
+<h3 class="text-success">vuelogix</h3>
+<!-- binding with class -->
+<h3 [class]="successClass">vuelogix</h3>
+<!-- class binding and class attribute in same htmlelement -->
+<h3 class="text-special" [class]="successClass">vuelogix</h3>
+<!-- applying for single class -->
+<h3 [class.text-danger]="hasError">vuelogix </h3>
+<!-- applying for multiple class(ngclass directive) -->
+<!-- can dynamically add or remove class  in html element for user interaction-->
+<h3 [ngClass]="messageClasses"></h3>
+<h1>STYLE BINDING</h1>
+<h3 [style.color]="'blue'">style binding</h3>
+<!-- CONDITIONAL OPERATOR CAN BE USED TO CSS PROPERTY -->
+<h3 [style.color]="hasError ? 'brown':'yellow'">style binding</h3>
+<!-- can assign component class property during binding -->
+<h3 [style.color]="highlightColor">style binding</h3>
+<!-- to apply multiple styles we use ng directives like ng class -->
+<h3 [ngStyle]="titleStyle">style binding</h3>
+<h1>EVENT BINDING</h1>
+<button (click)="onClick()">Greet</button>
+<!-- setting properties on mouse click -->
+{{greeting}}
+<!-- to get information about event -->
+<button (click)="onClicked($event)">Greeted</button>
+{{greetings}}
+<button (click)="greeting='welcome to event binding'">Greeting</button>
+<h1>TEMPLATE REFRENCE VARIABLE</h1>
+<!-- can refer to an html and dom propertyy -->
+<input #myInput type="text">
+<button (click)="logMessage(myInput)">Log</button>
+<h1>TWO WAY BINDING</h1>
+<input [(ngModel)] ="names"type="text">
+{{names}}
+
